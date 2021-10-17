@@ -1,0 +1,16 @@
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\console.rabbitmq.production.exe
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\console.rabbitmq.production.deps.json
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\console.rabbitmq.production.runtimeconfig.json
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\console.rabbitmq.production.runtimeconfig.dev.json
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\console.rabbitmq.production.dll
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\console.rabbitmq.production.pdb
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+E:\netcore\console.rabbitmq.production\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.csprojAssemblyReference.cache
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.AssemblyInfoInputs.cache
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.AssemblyInfo.cs
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.csproj.CoreCompileInputs.cache
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.csproj.CopyComplete
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.dll
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.pdb
+E:\netcore\console.rabbitmq.production\obj\Debug\netcoreapp3.1\console.rabbitmq.production.genruntimeconfig.cache

@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\netcore\\console.rabbitmq.production\\console.rabbitmq.production.csproj": {}
+  },
+  "projects": {
+    "E:\\netcore\\console.rabbitmq.production\\console.rabbitmq.production.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\netcore\\console.rabbitmq.production\\console.rabbitmq.production.csproj",
+        "projectName": "console.rabbitmq.production",
+        "projectPath": "E:\\netcore\\console.rabbitmq.production\\console.rabbitmq.production.csproj",
+        "packagesPath": "C:\\Users\\98692\\.nuget\\packages\\",
+        "outputPath": "E:\\netcore\\console.rabbitmq.production\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\98692\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://nuget.yxzhn.com": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
