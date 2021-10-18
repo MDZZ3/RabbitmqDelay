@@ -13,8 +13,6 @@ namespace console.rabbitmq.production
 
             delayMethod2();
 
-
-
         }
 
         /// <summary>
@@ -51,24 +49,40 @@ namespace console.rabbitmq.production
             channl.QueueDeclare("queue.business.test", true, false, false, null);
             channl.QueueBind("queue.business.test", "exchange.business.test", "businessRoutingkey", null);
 
+            #region 控制台输入文字
+            //Console.WriteLine("生产者开始发送消息");
+            //while (true)
+            //{
 
+            //    string message = Console.ReadLine();
+            //    var body = Encoding.UTF8.GetBytes(message);
+            //    var properties = channl.CreateBasicProperties();
+            //    properties.Persistent = true;
+            //    properties.Expiration = "5000";
+            //    //发送一条延时5秒的消息
+            //    channl.BasicPublish("exchange.business.dlx", "", properties, body);
+
+            //}
+            #endregion
+
+            #region 缺点展示
             string message1 = "Hello Word!1";
             string message2 = "Hello Word!2";
             var body1 = Encoding.UTF8.GetBytes(message1);
             var body2 = Encoding.UTF8.GetBytes(message2);
-            var properties = channl.CreateBasicProperties();
+            var properties = channl.CreateBasicProperties();    
             properties.Persistent = true;
-            properties.Expiration = "10000";
+            properties.Expiration = "20000";
+            //先发送延时20秒的消息
             channl.BasicPublish("exchange.business.dlx", "", properties, body2);
 
-            //var properties2 = channl.CreateBasicProperties();
-            //properties.Persistent = true;
-            //properties.Expiration = "80000";
-            properties.Expiration = "20000";
+            //再发送延时10秒的消息
+            properties.Expiration = "10000";
             channl.BasicPublish("exchange.business.dlx", "", properties, body1);
+            #endregion
         }
 
-        
+
         /// <summary>
         /// 利用rabbitmq的延时插件实现
         /// </summary>
@@ -90,13 +104,33 @@ namespace console.rabbitmq.production
                 {"x-delayed-type","direct" }
             };
 
+            //指定x-delayed-message 类型的交换机，并且添加x-delayed-type属性
             channel.ExchangeDeclare("plug.delay.exchange", "x-delayed-message", true, false, exchangeArgs);
 
             channel.QueueDeclare("plug.delay.queue", true, false, false, null);
 
             channel.QueueBind("plug.delay.queue", "plug.delay.exchange", "plugdelay");
 
+            //#region 控制台输入
+            //var properties = channel.CreateBasicProperties();
+            //Console.WriteLine("生产者开始发送消息");
+            //Dictionary<string, object> headers = new Dictionary<string, object>()
+            //{
+            //    {"x-delay","5000" }
+            //};
+            //properties.Persistent = true;
+            //properties.Headers = headers;
+            //while (true)
+            //{
 
+            //    string message = Console.ReadLine();
+            //    var body = Encoding.UTF8.GetBytes(message);
+            //    channel.BasicPublish("plug.delay.exchange", "plugdelay", properties, body);
+
+            //}
+            //#endregion
+
+            
             string message1 = "Hello Word!1";
             string message2 = "Hello Word!2";
             var body1 = Encoding.UTF8.GetBytes(message1);
@@ -108,12 +142,12 @@ namespace console.rabbitmq.production
             };
 
             properties.Persistent = true;
-            //properties.Expiration = "10000";
-            properties.Headers= headers;
-
+            properties.Headers = headers;
+            //先发送20秒过期的消息
             channel.BasicPublish("plug.delay.exchange", "plugdelay", properties, body2);
 
-            headers["x-delay"]= "10000";
+            headers["x-delay"] = "10000";
+            //再发送10秒过期的消息
             channel.BasicPublish("plug.delay.exchange", "plugdelay", properties, body1);
         }
     }

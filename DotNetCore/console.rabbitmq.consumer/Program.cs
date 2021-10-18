@@ -28,13 +28,17 @@ namespace console.rabbitmq.consumer
 
             EventingBasicConsumer consumer = new EventingBasicConsumer(channel);
 
+            
+            //给消费时添加一个委托
             consumer.Received += (obj, ea) =>
             {
                 var message = Encoding.UTF8.GetString(ea.Body.ToArray());
+                //打印消费的消息
                 Console.WriteLine(message);
                 channel.BasicAck(ea.DeliveryTag, false);
             };
-
+            
+            //消费queue.business.test队列的消息
             channel.BasicConsume("queue.business.test", false, consumer);
 
             Console.ReadKey();
